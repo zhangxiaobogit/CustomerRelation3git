@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white">
+    <com.update.viewbar.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cgdd_search_bg"
+        android:orientation="horizontal"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/search_bg" />
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="输入序列号"
+            android:imeOptions="actionSearch"
+            android:inputType="text" />
+        <ImageView
+            android:id="@+id/iv_scan"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/scan"
+            android:layout_marginRight="@dimen/margin"/>
+    </LinearLayout>
+    <com.update.viewbar.refresh.PullToRefreshLayout
+        android:id="@+id/mFilterContentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_line_color"
+        android:layout_weight="1">
+
+        <com.update.viewbar.refresh.PullableRecyclerView
+            android:id="@+id/pullRecycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.update.viewbar.refresh.PullToRefreshLayout>
+</LinearLayout>
